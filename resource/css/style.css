@@ -1,0 +1,171 @@
+/*---------Couleurs-------------*/
+/*---------Police-------------*/
+h1, h2 {
+  color: #158a15;
+  font-size: 2.8em;
+}
+
+th {
+  color: #c9ab01 !important;
+  font-size: 1em;
+}
+
+td, p {
+  color: white;
+  font-size: 0.8em;
+}
+
+.body1 {
+  margin: 0;
+  height: 100vh;
+  background-image: url(../image/mur2.png);
+  background-position: center;
+  background-size: cover;
+  font-family: 'Akaya Telivigala', cursive;
+  z-index: -3;
+}
+
+.body2 {
+  margin: 0;
+  height: 100vh;
+  background-image: url(../image/murClient.jpg);
+  background-position: center;
+  background-size: cover;
+  font-family: 'Akaya Telivigala', cursive;
+  z-index: -3;
+}
+
+header {
+  height: 20vh;
+}
+
+footer {
+  margin: 0;
+  height: 20vh;
+  background-image: url(../image/table.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.innkeeper {
+  margin: 0;
+  height: 60vh;
+  width: 20em;
+  background-image: url(../image/aubergiste.png);
+  background-position: center;
+  background-size: cover;
+  z-index: -2;
+}
+
+.warrior {
+  margin: 0;
+  height: 80vh;
+  width: 22em;
+  background-image: url(../image/client.png);
+  background-position: center;
+  background-size: cover;
+  z-index: -2;
+}
+
+.slate {
+  margin: 0;
+  height: 13em;
+  width: 9em;
+  background-image: url(../image/ardoise.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+  margin-top: -13em;
+  margin-right: 6em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.market {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 60vh;
+}
+
+.spot {
+  height: 8em;
+  width: 26em;
+}
+
+.form {
+  margin-top: -1em;
+}
+
+.lien {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+}
+
+.shopVide {
+  margin: 0;
+  height: 7em;
+  width: 6em;
+  background-image: url(../image/enssembleshopvide2.png);
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+  margin-bottom: 4.5em;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.shopVide:hover {
+  margin: 0;
+  height: 7em;
+  width: 6em;
+  background-image: url(../image/enssembleshoppleine2.png);
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+  margin-bottom: 4.5em;
+}
+/*# sourceMappingURL=style.css.map */

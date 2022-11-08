@@ -1,0 +1,24 @@
+/*---------Couleurs-------------*/
+
+$primary: rgb(255, 255, 255);
+$secondary: rgb(21, 138, 21);
+$third: rgb(201, 171, 1);
+
+
+
+/*---------Police-------------*/
+
+h1, h2 {
+    color: $secondary;
+    font-size: 2.8em;
+}
+
+th {
+    color: $third !important;
+    font-size: 1em;
+}
+
+td, p {
+    color: $primary;
+    font-size: 0.8em;
+}

@@ -1,4 +1,5 @@
 <?php
+
 $pdo = new PDO(
     'mysql:host=localhost;dbname=mini-shop;port=3306',
     'root',
@@ -33,80 +34,122 @@ $products = $req2->fetchAll(PDO::FETCH_ASSOC);
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    <!-- font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+
+    <!-- css -->
+
+    <link rel="stylesheet" href="resource/css/style.css">
+
 </head>
 
 
 
-<body>
+<body class="body2">
 
     <header>
-        <section>
+        <section class="header">
             <h1>
                 SHOP-OP
             </h1>
             <p>
                 Your products at low prices
             </p>
+            <h2>
+                THE MARKET
+            </h2>
         </section>
     </header>
 
-    <form action="mini-shop-formCategory.php" method="post">
-        <input type="text" name="nameCategory">
-        <input type="submit" value="create a category">
-    </form>
+    <main>
+        <div class="market">
+            <div class="warrior">
+                <img src="" alt="">
+            </div>
+            <div class="cible">
 
-    <ul>
-        <?php
-        foreach ($categories as $key => $value) {
-            echo "<li>$value[nameCategory]</li>";
-        }
-        ?>
-    </ul>
+                <!-- J'affiche mes données -->
+                <table class="table table-dark table-striped spot">
+                    <tr>
+                        <th>
+                            PRODUCTS
+                        </th>
+                        <th>
+                            PRICES
+                        </th>
+                        <th>
+                            CATEGORIES
+                        </th>
+                    </tr>
+                    <?php
+                    // var_dump($resultat);
+                    foreach ($products as $value) { ?>
+                        <tr>
+                            <td><?= $value['nameProduit'] ?></td>
+                            <td><?= $value['price'] ?></td>
+                            <td><?= $value['nameCategory'] ?></td>
+                            <td><?= $value['description'] ?></td>
+                            <td><img src="uploads/<?= $value['image'] ?>" style="width:50px"></td>
+                            <td>
+                                <a href="mini-shop-updateProducts.php?idProduct=<?= $value['idProduct'] ?>">Modify</a><br>
+                                <a href="deleteProduct.php?idProduct=<?= $value['idProduct'] ?>">Delete</a>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </table>
+                <div class="form">
+                    <form action="mini-shop-formCategory.php" method="post">
+                        <input type="text" name="nameCategory"><br>
+                        <input type="submit" value="create a category">
+                    </form>
 
+                    <form enctype="multipart/form-data" action="mini-shop-formproducts.php" method="post">
 
-    <form enctype="multipart/form-data" action="mini-shop-formproducts.php" method="post">
+                        <select name="idCategory">
+                            <option disabled> --Choisissez une catégorie--</option>
+                            <?php
+                            foreach ($categories as $key => $value) { ?>
+                                <option value="<?php echo $value['idCategory'] ?>"><?php echo $value['nameCategory'] ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select><br>
 
-        <input type="text" name="nameProduit" placeholder="nameProduit">
-        <input type="text" name="price" placeholder="price">
-        <input type="text" name="description" placeholder="description">
+                        <input type="text" name="nameProduit" placeholder="nameProduit"><br>
+                        <input type="text" name="price" placeholder="price"><br>
+                        <input type="text" name="description" placeholder="description"><br>
+                        <input type="file" name="image" placeholder="image"><br>
+                        <input type="submit" value="Create a product">
 
-        <select name="idCategory">
-            <option disabled> --Choisissez une catégorie--</option>
-            <?php
-            foreach ($categories as $key => $value) { ?>
-                <option value="<?php echo $value['idCategory'] ?>"><?php echo $value['nameCategory'] ?></option>
-            <?php
-            }
-            ?>
-        </select>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-row-reverse">
+            <div class="slate">
+                <div>
+                    <button type="button" class="btn btn-success" name="cible" value="masquer"><a href="http://localhost/mini-boutique/mini-shop-MenuAdminOFF.php">Table On</a></button>
+                </div>
+            </div>
+        </div>
 
-        <input type="file" name="image" placeholder="image">
-        <input type="submit" value="Create a product">
+    </main>
 
-    </form>
+    <footer class="lien">
 
-    <h1>THE MARKET</h1>
+        <div>
+            <a href="http://localhost/mini-boutique/mini-shop-MenuClient.php">
+                <div class="shopVide"></div>
+            </a>
+        </div>
 
-    <!-- J'affiche mes données -->
-    <table class="table">
-        <?php
-        // var_dump($resultat);
-        foreach ($products as $value) { ?>
-            <tr>
-                <td><?= $value['nameProduit'] ?></td>
-                <td><?= $value['price'] ?></td>
-                <td><?= $value['nameCategory'] ?></td>
-                <td><?= $value['description'] ?></td>
-                <td><img src="uploads/<?= $value['image'] ?>" style="width:50px"></td>
-                <td>
-                    <a href="mini-shop-updateProducts.php?idProduct=<?=$value['idProduct']?>">Modify the product</a>
-                    <a href="deleteProduct.php?idProduct=<?=$value['idProduct']?>">Delete the Product</a>
-                </td>
-            </tr>
-        <?php
-        }
-        ?>
-    </table>
+    </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 

@@ -1,0 +1,159 @@
+@import 'variable';
+
+
+
+// ------------<GENERAL>-------------//
+
+.body1 {
+    margin: 0;
+    height: 100vh;
+    background-image: url(../image/mur2.png);
+    background-position: center;
+    background-size: cover; 
+    font-family: 'Akaya Telivigala', cursive;
+    z-index: -3;
+}
+
+.body2 {
+    margin: 0;
+    height: 100vh;
+    background-image: url(../image/murClient.jpg);
+    background-position: center;
+    background-size: cover; 
+    font-family: 'Akaya Telivigala', cursive;
+    z-index: -3;
+}
+
+header{
+    height: 20vh;
+}
+
+
+
+footer {
+    margin: 0;
+    height: 20vh;
+    background-image: url(../image/table.jpg);
+    background-position: center;
+    background-size: cover; 
+    z-index: -1;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+// ------------</GENERAL>--------------//
+
+
+
+// ------------<OBJECT>-------------//
+
+.innkeeper {
+    margin: 0;
+    height: 60vh;
+    width: 20em;
+    background-image: url(../image/aubergiste.png);
+    background-position: center;
+    background-size: cover; 
+    z-index: -2;
+}
+
+.warrior {
+    margin: 0;
+    height: 80vh;
+    width: 22em;
+    background-image: url(../image/client.png);
+    background-position: center;
+    background-size: cover; 
+    z-index: -2;
+}
+
+.slate {
+    margin: 0;
+    height: 13em;
+    width: 9em;
+    background-image: url(../image/ardoise.jpg);
+    background-position: center;
+    background-size: cover; 
+    z-index: 0;
+    margin-top: -13em;
+    margin-right: 6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// ------------</OBJECT>--------------//
+
+
+
+// ------------<HEADER>-------------//
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// ------------</HEADER>--------------//
+
+
+
+// ------------<MAIN>-------------//
+
+.market {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 60vh;
+}
+
+.spot {
+    height: 8em;
+    width: 26em;
+}
+
+.form {
+    margin-top: -1em;
+}
+
+// ------------</MAIN>--------------//
+
+
+
+// ------------<FOOTER>-------------//
+
+.lien {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.shopVide {
+    margin: 0;
+    height: 7em;
+    width: 6em;
+    background-image: url(../image/enssembleshopvide2.png);
+    background-position: center;
+    background-size: cover; 
+    z-index: 0;
+    margin-bottom: 4.5em;
+    transition: 0.5s;
+}
+
+.shopVide:hover {
+    margin: 0;
+    height: 7em;
+    width: 6em;
+    background-image: url(../image/enssembleshoppleine2.png);
+    background-position: center;
+    background-size: cover; 
+    z-index: 0;
+    margin-bottom: 4.5em;
+}
+
+// ------------</FOOTER>--------------//

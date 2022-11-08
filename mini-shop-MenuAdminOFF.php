@@ -7,6 +7,10 @@ $pdo = new PDO(
 );
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+$req1 = $pdo->prepare("SELECT * FROM category");
+$req1->execute();
+$categories = $req1->fetchAll(PDO::FETCH_ASSOC);
+
 $req2 = $pdo->prepare("SELECT * FROM products INNER JOIN category ON products.idCategory = category.idCategory");
 $req2->execute();
 $products = $req2->fetchAll(PDO::FETCH_ASSOC);
@@ -43,64 +47,33 @@ $products = $req2->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-<body class="body1">
+<body class="body2">
 
     <header>
         <section class="header">
+            
             <h1>
                 SHOP-OP
             </h1>
             <p>
                 Your products at low prices
             </p>
-            <h2>
-                THE MARKET
-            </h2>
+
         </section>
     </header>
 
     <main>
         <div class="market">
-            <div class="innkeeper">
+
+            <div class="warrior">
                 <img src="" alt="">
             </div>
-            <div class="cible">
-
-
-                <!-- J'affiche mes données -->
-                <table class="table table-dark table-striped">
-                    <tr>
-                        <th>
-                            PRODUCTS
-                        </th>
-                        <th>
-                            PRICES
-                        </th>
-                        <th>
-                            CATEGORIES
-                        </th>
-                    </tr>
-                    <?php
-                    // var_dump($resultat);
-                    foreach ($products as $value) { ?>
-                        <tr>
-                            <td><?= $value['nameProduit'] ?></td>
-                            <td><?= $value['price'] ?></td>
-                            <td><?= $value['nameCategory'] ?></td>
-                            <td><?= $value['description'] ?></td>
-                            <td><img src="uploads/<?= $value['image'] ?>" style="width:50px"></td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                </table>
-
-            </div>
+            
         </div>
         <div class="d-flex flex-row-reverse">
             <div class="slate">
                 <div>
-                    <button type="button" class="btn btn-success" name="cible" value="masquer">Table On</button>
+                    <button type="button" class="btn btn-warning" name="cible" value="masquer"><a href="http://localhost/mini-boutique/mini-shop-MenuAdmin.php">Table Off</a></button>
                 </div>
             </div>
         </div>
@@ -110,7 +83,7 @@ $products = $req2->fetchAll(PDO::FETCH_ASSOC);
     <footer class="lien">
 
         <div>
-            <a href="http://localhost/mini-boutique/mini-shop-MenuAdmin.php">
+            <a href="http://localhost/mini-boutique/mini-shop-MenuClient.php">
                 <div class="shopVide"></div>
             </a>
         </div>
