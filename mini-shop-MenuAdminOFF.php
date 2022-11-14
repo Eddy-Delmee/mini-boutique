@@ -83,7 +83,7 @@ $products = $req2->fetchAll(PDO::FETCH_ASSOC);
     <footer class="lien">
 
         <div>
-            <a href="http://localhost/mini-boutique/mini-shop-MenuClient.php">
+            <a href="http://localhost/mini-boutique/mini-shop-MenuClientOFF.php">
                 <div class="shopVide"></div>
             </a>
         </div>

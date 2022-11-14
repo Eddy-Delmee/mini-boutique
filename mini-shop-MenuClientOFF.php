@@ -64,43 +64,12 @@ $products = $req2->fetchAll(PDO::FETCH_ASSOC);
             <div class="innkeeper">
                 <img src="" alt="">
             </div>
-            <div class="cible">
-
-
-                <!-- J'affiche mes données -->
-                <table class="table table-dark table-striped">
-                    <tr>
-                        <th>
-                            PRODUCTS
-                        </th>
-                        <th>
-                            PRICES
-                        </th>
-                        <th>
-                            CATEGORIES
-                        </th>
-                    </tr>
-                    <?php
-                    // var_dump($resultat);
-                    foreach ($products as $value) { ?>
-                        <tr>
-                            <td><?= $value['nameProduit'] ?></td>
-                            <td><?= $value['price'] ?></td>
-                            <td><?= $value['nameCategory'] ?></td>
-                            <td><?= $value['description'] ?></td>
-                            <td><img src="uploads/<?= $value['image'] ?>" style="width:50px"></td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                </table>
-
-            </div>
+            
         </div>
         <div class="d-flex flex-row-reverse">
             <div class="slate">
                 <div>
-                    <button type="button" class="btn btn-success" name="cible" value="masquer"><a href="http://localhost/mini-boutique/mini-shop-MenuClientOFF.php">Table On</a></button>
+                    <button type="button" class="btn btn-warning" name="cible" value="masquer"><a href="http://localhost/mini-boutique/mini-shop-MenuClient.php">Table Off</a></button>
                 </div>
             </div>
         </div>
@@ -110,7 +79,7 @@ $products = $req2->fetchAll(PDO::FETCH_ASSOC);
     <footer class="lien">
 
         <div>
-            <a href="http://localhost/mini-boutique/mini-shop-MenuAdmin.php">
+            <a href="http://localhost/mini-boutique/mini-shop-MenuAdminOFF.php">
                 <div class="shopVide"></div>
             </a>
         </div>
