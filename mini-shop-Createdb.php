@@ -29,7 +29,7 @@ try{
  PRIMARY KEY (`idProduct`) , FOREIGN KEY(idCategory) REFERENCES `category` (`idCategory`)
 );";
  $pdo->exec($req2);
- echo 'Félicitations, les tables ont bien été créées !';
+ echo 'Félicitations, les tables ont bien été crées !';
 
 }
  catch (PDOException $e){
